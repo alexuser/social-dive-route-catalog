@@ -1,0 +1,121 @@
+{
+  "routes": [
+    {
+      "aliases": ["Road Tunnel", "Mainline"],
+      "id": "the-road",
+      "limitations": "Fictional deterministic QA profile. Not a real dive route.",
+      "name": "The Road",
+      "profile": [
+        {"depthMeters": 0, "minute": 0},
+        {"depthMeters": 3, "minute": 0.25},
+        {"depthMeters": 27, "minute": 2.4},
+        {"depthMeters": 33, "minute": 3.4},
+        {"depthMeters": 50, "minute": 5},
+        {"depthMeters": 50, "minute": 32},
+        {"depthMeters": 45, "minute": 35},
+        {"depthMeters": 30, "minute": 38},
+        {"depthMeters": 30, "minute": 41}
+      ],
+      "provenance": "Bundled deterministic fixture · no network",
+      "site": "Local demo site",
+      "sourceURL": null
+    },
+    {
+      "aliases": ["Breakwater", "San Carlos Beach", "Coast Guard Pier"],
+      "id": "monterey-breakwater-wall",
+      "limitations": "Illustrative depth-time input only. Not surveyed navigation, current, conditions, access, or a verified diver log.",
+      "name": "Monterey Breakwater Wall",
+      "profile": [
+        {"depthMeters": 0, "minute": 0},
+        {"depthMeters": 7.62, "minute": 2},
+        {"depthMeters": 12.192, "minute": 5},
+        {"depthMeters": 12.192, "minute": 25},
+        {"depthMeters": 7.62, "minute": 32}
+      ],
+      "provenance": "Bundled source-linked planning draft · no community log redistributed",
+      "site": "San Carlos Beach, Monterey",
+      "sourceURL": "https://www.parks.ca.gov/?page_id=576"
+    },
+    {
+      "aliases": ["Metridium Fields", "Pipeline", "Metridium Field"],
+      "id": "monterey-metridium-fields-pipeline",
+      "limitations": "Illustrative depth-time input only. Not surveyed navigation, current, conditions, access, or a verified diver log.",
+      "name": "Metridium Fields via Pipeline",
+      "profile": [
+        {"depthMeters": 0, "minute": 0},
+        {"depthMeters": 9.144, "minute": 3},
+        {"depthMeters": 16.764, "minute": 7},
+        {"depthMeters": 18.288, "minute": 24},
+        {"depthMeters": 10.668, "minute": 34}
+      ],
+      "provenance": "Bundled source-linked planning draft · no community log redistributed",
+      "site": "San Carlos Beach, Monterey",
+      "sourceURL": "https://www.parks.ca.gov/?page_id=576"
+    },
+    {
+      "aliases": ["Whalers Cove", "Inner Cove"],
+      "id": "point-lobos-whalers-cove-inner-loop",
+      "limitations": "Illustrative depth-time input only. Not surveyed navigation, current, conditions, access, or a verified diver log.",
+      "name": "Whalers Cove Inner Loop",
+      "profile": [
+        {"depthMeters": 0, "minute": 0},
+        {"depthMeters": 6.096, "minute": 2},
+        {"depthMeters": 10.668, "minute": 5},
+        {"depthMeters": 10.668, "minute": 25},
+        {"depthMeters": 6.096, "minute": 32}
+      ],
+      "provenance": "Bundled source-linked planning draft · no community log redistributed",
+      "site": "Point Lobos State Natural Reserve",
+      "sourceURL": "https://www.pointlobos.org/wp-content/uploads/2022/08/Point-Lobos-Printable-Dive-Map.pdf"
+    },
+    {
+      "aliases": ["Middle Reef", "Sand Channel"],
+      "id": "point-lobos-middle-reef-sand-channel",
+      "limitations": "Illustrative depth-time input only. Not surveyed navigation, current, conditions, access, or a verified diver log.",
+      "name": "Middle Reef via Sand Channel",
+      "profile": [
+        {"depthMeters": 0, "minute": 0},
+        {"depthMeters": 7.62, "minute": 3},
+        {"depthMeters": 13.716, "minute": 7},
+        {"depthMeters": 15.24, "minute": 28},
+        {"depthMeters": 9.144, "minute": 36}
+      ],
+      "provenance": "Bundled source-linked planning draft · no community log redistributed",
+      "site": "Point Lobos State Natural Reserve",
+      "sourceURL": "https://www.pointlobos.org/wp-content/uploads/2022/08/Point-Lobos-Printable-Dive-Map.pdf"
+    },
+    {
+      "aliases": ["Hole in the Wall", "HITW"],
+      "id": "point-lobos-hole-in-the-wall",
+      "limitations": "Illustrative depth-time input only. Not surveyed navigation, current, conditions, access, or a verified diver log.",
+      "name": "Hole-in-the-Wall",
+      "profile": [
+        {"depthMeters": 0, "minute": 0},
+        {"depthMeters": 10.668, "minute": 4},
+        {"depthMeters": 19.812, "minute": 9},
+        {"depthMeters": 21.336, "minute": 28},
+        {"depthMeters": 12.192, "minute": 38}
+      ],
+      "provenance": "Bundled source-linked planning draft · no community log redistributed",
+      "site": "Point Lobos State Natural Reserve",
+      "sourceURL": "https://www.pointlobos.org/wp-content/uploads/2022/08/Point-Lobos-Printable-Dive-Map.pdf"
+    },
+    {
+      "aliases": ["Bluefish Cove", "Secret Pass"],
+      "id": "point-lobos-bluefish-secret-pass",
+      "limitations": "Illustrative depth-time input only. Not surveyed navigation, current, conditions, access, or a verified diver log.",
+      "name": "Bluefish Secret Pass",
+      "profile": [
+        {"depthMeters": 0, "minute": 0},
+        {"depthMeters": 12.192, "minute": 5},
+        {"depthMeters": 24.384, "minute": 10},
+        {"depthMeters": 27.432, "minute": 28},
+        {"depthMeters": 15.24, "minute": 40}
+      ],
+      "provenance": "Bundled source-linked planning draft · no community log redistributed",
+      "site": "Point Lobos State Natural Reserve",
+      "sourceURL": "https://www.pointlobos.org/wp-content/uploads/2022/08/Point-Lobos-Printable-Dive-Map.pdf"
+    }
+  ],
+  "schema": "social-dive-route-catalog@1"
+}
