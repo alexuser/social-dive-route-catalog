@@ -1,0 +1,277 @@
+{
+  "fixtureSchema": 1,
+  "cases": [
+    {
+      "name": "exact-90-feet",
+      "valid": true,
+      "checksums": [
+        "3fd6df7bf0919b9190c2c6d7276af95b09139ea09e5d66447261e157e9baaada"
+      ],
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "fictional-demo",
+      "valid": true,
+      "checksums": [
+        "81bdae6c32854ee4af744a5a6861d53764516be68e1b9e3c70dbd1db4a9b24f3"
+      ],
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":null,\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"fictional-demo\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "maximum-supported-profile",
+      "valid": true,
+      "checksums": [
+        "88d0e2bff43606dd36946e0d9eb126d87fdbe32ff3edc4020fb7bce0687cdafa"
+      ],
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":18000,\"depthMeters\":152.4}]}]}"
+    },
+    {
+      "name": "empty-provenance",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "empty-limitations",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "empty-name",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "empty-site",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "whitespace-provenance",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"   \",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "control-in-name",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Route\\nName\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "unbounded-name",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "invalid-id",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"../route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "duplicate-alias",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"same\",\"same\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "blank-alias",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "too-many-aliases",
+      "valid": false,
+      "error": "metadata",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\",\"17\",\"18\",\"19\",\"20\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "missing-category",
+      "valid": false,
+      "error": "category",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "unsupported-category",
+      "valid": false,
+      "error": "category",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"verified-dive\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "missing-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":null,\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "http-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"http://example.org/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "file-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"file:///tmp/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "credential-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://user:password@example.org/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "fragment-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/route#fragment\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "port-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org:8443/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "local-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://localhost/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "ip-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://127.0.0.1/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "space-url",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/route space\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "malformed-escape",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/%xx\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "fictional-source-mismatch",
+      "valid": false,
+      "error": "source-url",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"fictional-demo\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "subsecond-sample",
+      "valid": false,
+      "error": "time-precision",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":0.5,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "time-out-of-range",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":18001,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "duplicate-time",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":0,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "reversed-time",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":120,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "huge-time",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":10000000000000000000000000,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "negative-depth",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":-1},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "deep-profile",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":152.400001},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "unsupported-depth-precision",
+      "valid": false,
+      "error": "depth-precision",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.4320001},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "non-surface-start",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":1},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "surface-finish",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":0}]}]}"
+    },
+    {
+      "name": "one-point",
+      "valid": false,
+      "error": "profile",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0}]}]}"
+    },
+    {
+      "name": "duplicate-id",
+      "valid": false,
+      "error": "document",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]},{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "unknown-schema",
+      "valid": false,
+      "error": "document",
+      "payload": "{\"schema\":\"social-dive-route-catalog@999\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "newline-id",
+      "valid": false,
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"route\\n\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}",
+      "error": "metadata"
+    },
+    {
+      "name": "encoded-host",
+      "valid": false,
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://exa%6dple.org/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}",
+      "error": "source-url"
+    },
+    {
+      "name": "empty-port",
+      "valid": false,
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org:/route\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}",
+      "error": "source-url"
+    },
+    {
+      "name": "minimum-depth-precision",
+      "valid": true,
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":1e-06},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}",
+      "checksums": [
+        "411136e509a52bc9ee0f9cb6e10d3cbdafce33d03778306cbaf6340d2f2d572e"
+      ]
+    }
+  ]
+}

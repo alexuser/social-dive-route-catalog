@@ -1,3 +1,5 @@
 *.pem
 *.key
 .DS_Store
+build/
+__pycache__/
