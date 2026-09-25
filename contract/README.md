@@ -14,7 +14,8 @@ are limited to 700,000 UTF-8 bytes before signing (the app caps envelopes at
 - `id`: 1–128 lowercase ASCII letters, digits, or hyphens, starting with a letter/digit.
 - `name`, `site`, `provenance`, `limitations`: nonblank, trimmed strings, limited
   to 100, 160, 1,000, and 2,000 UTF-8 bytes. ASCII controls are forbidden.
-- `aliases`: at most 20 distinct, nonblank strings of at most 100 UTF-8 bytes.
+- `aliases`: at most 20 nonblank strings of at most 100 UTF-8 bytes each;
+  duplicates are compared by exact UTF-8 bytes, without Unicode normalization.
 - `category`: `fictional-demo` or `source-linked-draft`. A fictional record has
   an explicit null `sourceURL`; a source-linked record requires an HTTPS URL.
 - `sourceURL`: at most 2,048 ASCII bytes, a dotted DNS host, and no credentials,
@@ -26,7 +27,9 @@ are limited to 700,000 UTF-8 bytes before signing (the app caps envelopes at
   0.3048 m, and the last point remains submerged for generated ascent.
 
 Subsecond input is rejected as `time-precision`; it is never rounded into the
-same second. Depth precision beyond six decimal places is rejected. The app
+same second. Depth precision beyond six decimal places is rejected. Signed
+v2 numeric spellings are checked before Decimal decoding, including exponent
+notation, so excess precision cannot be rounded into an accepted value. The app
 keeps Decimal depths and integer seconds in the source record and local draft;
 27.432 m yields a 90 ft summary without a truncated meter intermediate.
 

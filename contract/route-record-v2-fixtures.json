@@ -272,6 +272,40 @@
       "checksums": [
         "411136e509a52bc9ee0f9cb6e10d3cbdafce33d03778306cbaf6340d2f2d572e"
       ]
+    },
+    {
+      "name": "depth-beyond-decimal-representation",
+      "valid": false,
+      "error": "depth-precision",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432000000000000000000000000000000000001},{\"elapsedSeconds\":1800,\"depthMeters\":27.432000000000000000000000000000000000001}]}]}"
+    },
+    {
+      "name": "seconds-beyond-decimal-representation",
+      "valid": false,
+      "error": "time-precision",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121.0000000000000000000000000000000000000000000001,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "distinct-utf8-aliases",
+      "valid": true,
+      "checksums": [
+        "5572a9e13b801be2bd9140db0b3d5133a3165b8cdfa91fa2a6df7a2d57a8d33b"
+      ],
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"é\",\"é\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":121,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
+    },
+    {
+      "name": "exact-exponent-notation",
+      "valid": true,
+      "checksums": [
+        "3fd6df7bf0919b9190c2c6d7276af95b09139ea09e5d66447261e157e9baaada"
+      ],
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elapsedSeconds\":1.21e2,\"depthMeters\":2.7432e1},{\"elapsedSeconds\":1800,\"depthMeters\":2.7432e1}]}]}"
+    },
+    {
+      "name": "escaped-time-key-with-subsecond-tail",
+      "valid": false,
+      "error": "time-precision",
+      "payload": "{\"schema\":\"social-dive-route-catalog@2\",\"routes\":[{\"schema\":\"social-dive-route-record@2\",\"id\":\"precision-route\",\"name\":\"Precision route\",\"aliases\":[\"Ninety feet\"],\"site\":\"Synthetic QA site\",\"provenance\":\"Synthetic contract fixture; no real dive data.\",\"sourceURL\":\"https://example.org/routes/precision?revision=2\",\"limitations\":\"Illustrative input only. No navigation, conditions, or safety verification.\",\"category\":\"source-linked-draft\",\"profile\":[{\"elapsedSeconds\":0,\"depthMeters\":0},{\"elaps\\u0065dSeconds\":121.0000000000000000000000000000000000000000000001,\"depthMeters\":27.432},{\"elapsedSeconds\":1800,\"depthMeters\":27.432}]}]}"
     }
   ]
 }
