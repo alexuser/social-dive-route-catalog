@@ -14,6 +14,43 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SignCatalogTests(unittest.TestCase):
+    def ambiguous_payloads(self):
+        payload = json.loads((ROOT / 'contract/route-record-v2-fixtures.json').read_text())['cases'][0]['payload']
+        self.assertIn('"depthMeters":27.432', payload)
+        return {
+            'root-member': payload.replace('"schema":', '"schema":"shadow","schema":', 1),
+            'record-member': payload.replace('"name":', '"name":"shadow","name":', 1),
+            'hidden-depth-precision': payload.replace(
+                '"depthMeters":27.432', '"depthMeters":27.4320001,"depthMeters":27.432', 1),
+            'escaped-equivalent-member': payload.replace(
+                '"depthMeters":27.432', r'"depth\u004deters":27.432,"depthMeters":27.432', 1),
+        }
+
+    def test_duplicate_members_are_rejected_before_collapse(self):
+        for name, payload in self.ambiguous_payloads().items():
+            with self.subTest(case=name):
+                with self.assertRaisesRegex(ContractError, '^document$'):
+                    decode_document(payload.encode('utf-8'))
+
+    def test_duplicate_members_stop_before_signing(self):
+        for name, payload in self.ambiguous_payloads().items():
+            with self.subTest(case=name), tempfile.TemporaryDirectory() as directory:
+                tmp = Path(directory)
+                source, output, marker = [tmp / n for n in ['input.json', 'signed.json', 'crypto-called']]
+                source.write_text(payload)
+                stub = tmp / 'openssl'
+                stub.write_text('#!/bin/sh\ntouch "$CRYPTO_MARKER"\nexit 91\n')
+                stub.chmod(0o700)
+                env = {**os.environ, 'PATH': f'{tmp}:' + os.environ['PATH'], 'CRYPTO_MARKER': str(marker)}
+                result = subprocess.run(
+                    ['/bin/zsh', '-f', str(ROOT / 'tools/sign_catalog.sh'), str(source),
+                     str(tmp / 'unused-key'), str(output)], env=env, capture_output=True, text=True,
+                )
+                self.assertFalse(marker.exists(), 'Ambiguous JSON reached cryptographic signing')
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('Catalog rejected: document', result.stderr)
+                self.assertFalse(output.exists())
+
     def test_migration_is_exact_bounded_and_unsigned(self):
         original = (ROOT / 'catalog-v1.json').read_bytes()
         migrated = decode_document(migrate(original))

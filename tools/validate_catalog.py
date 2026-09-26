@@ -96,10 +96,19 @@ def validate_document(document):
     return document
 
 
+def unique_object(pairs):
+    # Keys are already JSON-unescaped here; reject ambiguity before dict collapse.
+    result = {}
+    for key, value in pairs:
+        require(key not in result, 'document')
+        result[key] = value
+    return result
+
+
 def decode_document(payload):
     require(len(payload) <= MAX_PAYLOAD_BYTES, 'document')
     try:
-        document = json.loads(payload, parse_float=Decimal,
+        document = json.loads(payload, parse_float=Decimal, object_pairs_hook=unique_object,
                               parse_constant=lambda _: (_ for _ in ()).throw(ContractError('profile')))
     except (ValueError, UnicodeError) as error:
         if isinstance(error, ContractError):

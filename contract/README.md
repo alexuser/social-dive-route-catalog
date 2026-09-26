@@ -26,6 +26,12 @@ are limited to 700,000 UTF-8 bytes before signing (the app caps envelopes at
   strictly increase. The first point is (0, 0), maximum depth is at least
   0.3048 m, and the last point remains submerged for generated ascent.
 
+The signer additionally rejects duplicate JSON member names in every object
+before decoding them into a dictionary, including JSON-escaped equivalent
+names. A later valid value cannot hide an earlier invalid value from the
+signing gate. This producer ambiguity check is stricter than consumer parsing;
+the existing 49 shared fixtures and published catalog bytes remain unchanged.
+
 Subsecond input is rejected as `time-precision`; it is never rounded into the
 same second. Depth precision beyond six decimal places is rejected. Signed
 v2 numeric spellings are checked before Decimal decoding, including exponent
