@@ -9,13 +9,16 @@ fi
 input_json=$1
 private_key=$2
 output_json=$3
-signature_file=$(mktemp "${TMPDIR:-/private/tmp}/social-dive-catalog-signature.XXXXXX")
-trap 'rm -f "$signature_file"' EXIT
+work_dir=$(mktemp -d "${TMPDIR:-/private/tmp}/social-dive-catalog-signature.XXXXXX")
+trap 'rm -rf "$work_dir"' EXIT
+signature_file="$work_dir/signature"
+snapshot="$work_dir/catalog.json"
+cp "$input_json" "$snapshot"
+chmod 400 "$snapshot"
 
-jq -e '.schema == "social-dive-route-catalog@1" and (.routes | type == "array" and length > 0)' \
-  "$input_json" >/dev/null
-openssl pkeyutl -sign -rawin -inkey "$private_key" -in "$input_json" -out "$signature_file"
-payload_base64=$(openssl base64 -A -in "$input_json")
+python3 "${0:A:h}/validate_catalog.py" "$snapshot" >/dev/null
+openssl pkeyutl -sign -rawin -inkey "$private_key" -in "$snapshot" -out "$signature_file"
+payload_base64=$(openssl base64 -A -in "$snapshot")
 signature_base64=$(openssl base64 -A -in "$signature_file")
 
 jq -n \
